@@ -4,8 +4,8 @@
  */
 
 /* Global Variables */
-
-
+var trainer = false
+var count = 0
 /** 
  * main  
  * Handles new Nim games with gametype choice simple or trainer and a play again option. 
@@ -14,6 +14,12 @@
  */
 /* Main */
 function main(){
+
+    var again= false 
+    playNim()
+    again = confirm ("Would you like to play again?")
+if (again == true) main()
+else alert ("thanks for playing")
 
 }
 
@@ -24,6 +30,14 @@ function main(){
  * @return none
  */
 function playNim(){
+count = 0
+while (count < 21) {
+    userTurn()
+    if (count > 20) alert ("you lose")
+    else cpuTurn
+    if (count > 20) alert ("you win")
+}
+
 
 }
 
