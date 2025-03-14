@@ -14,13 +14,12 @@ var count = 0
  */
 /* Main */
 function main(){
-
-    var again= false 
+    var again= false
+    var trainer = confirm ("Trainer mode?") 
     playNim()
     again = confirm ("Would you like to play again?")
 if (again == true) main()
 else alert ("thanks for playing")
-var trainer = confirm ("Trainer mode?")
 }
 
 /** 
@@ -31,11 +30,12 @@ var trainer = confirm ("Trainer mode?")
  */
 function playNim(){
 count = 0
-while (count < 21) {
+if (count < 21) {
     userTurn()
     if (count > 20) alert ("you lose")
     else cpuTurn
     if (count > 20) alert ("you win")
+    else playNim()
 }
 }
 
@@ -49,7 +49,6 @@ function userTurn(){
 var turn = prompt ("enter a number within 3 digits of your previous number")
 if (turn < 1 || turn > 3) {
     alert ("your input is invalid")
-    userTurn()
 }
 else count = count + turn 
 }
