@@ -20,7 +20,7 @@ function main(){
     again = confirm ("Would you like to play again?")
 if (again == true) main()
 else alert ("thanks for playing")
-
+var trainer = confirm ("Trainer mode?")
 }
 
 /** 
@@ -37,8 +37,6 @@ while (count < 21) {
     else cpuTurn
     if (count > 20) alert ("you win")
 }
-
-
 }
 
 /** 
@@ -48,9 +46,13 @@ while (count < 21) {
  * @return none
  */
 function userTurn(){
-
+var turn = prompt ("enter a number within 3 digits of your previous number")
+if (turn < 1 || turn > 3) {
+    alert ("your input is invalid")
+    userTurn()
 }
-
+else count = count + turn 
+}
 /** 
  * cpuTurn 
  * Generate computer's turn without losing on purpose.  Different turns if trainer or simple.  
@@ -58,5 +60,12 @@ function userTurn(){
  * @return none
  */
 function cpuTurn(){
-
+turn = 0 
+if (count = 18) {turn = 3 }
+else if (count = 18) turn = 2
+else if (count > 18) turn = 1
+else if (trainer = true) turn = 4 - count % 4
+else turn = Math.floor(Math.random()*3+1)
+count += turn 
+alert ("I counted " + turn + " the count is now " + count)
 }
