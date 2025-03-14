@@ -35,7 +35,7 @@ if (count < 21) {
     if (count > 20) alert ("you lose")
     else cpuTurn
     if (count > 20) alert ("you win")
-    else playNim()
+    else alert ("test")
 }
 }
 
@@ -46,11 +46,13 @@ if (count < 21) {
  * @return none
  */
 function userTurn(){
-var turn = prompt ("enter a number within 3 digits of your previous number")
+var turn = prompt ("enter a number")
 if (turn < 1 || turn > 3) {
     alert ("your input is invalid")
+    userTurn()
 }
 else count = count + turn 
+
 }
 /** 
  * cpuTurn 
@@ -60,7 +62,7 @@ else count = count + turn
  */
 function cpuTurn(){
 turn = 0 
-if (count = 18) {turn = 3 }
+if (count = 17) {turn = 3 }
 else if (count = 18) turn = 2
 else if (count > 18) turn = 1
 else if (trainer = true) turn = 4 - count % 4
