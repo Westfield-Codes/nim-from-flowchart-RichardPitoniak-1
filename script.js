@@ -32,9 +32,8 @@ function playNim(){
 count = 0
 while (count < 21) {
     userTurn()
-    if (count > 21) {alert ("you lose")}
-    else 
-{
+    if (count > 20) {alert ("you lose")}
+    else {
     cpuTurn()
     if (count > 20) {alert ("you win")} 
         }   
@@ -48,7 +47,8 @@ while (count < 21) {
  * @return none
  */
 function userTurn(){
-let turn = prompt ("enter a number within 3" )
+let turn = parseInt (prompt ("enter a number within 3" ) )
+
 if (turn < 1 || turn > 3) {
     alert ("your input is invalid")
     userTurn()
