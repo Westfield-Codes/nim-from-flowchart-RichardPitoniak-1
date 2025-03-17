@@ -47,7 +47,7 @@ while (count < 21) {
  * @return none
  */
 function userTurn(){
-let turn = parseInt (prompt ("enter a number within 3" ) )
+let turn = parseInt (prompt ("enter a 1, 2 or 3" ) )
 
 if (turn < 1 || turn > 3) {
     alert ("your input is invalid")
