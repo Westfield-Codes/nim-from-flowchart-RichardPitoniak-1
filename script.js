@@ -14,8 +14,8 @@ var count = 0
  */
 /* Main */
 function main(){
-    var again= false
-    var trainer = confirm ("Trainer mode?") 
+    let again = false
+    trainer = confirm ("Trainer mode?") 
     playNim()
     again = confirm ("Would you like to play again?")
 if (again == true) main()
@@ -30,13 +30,15 @@ else alert ("thanks for playing")
  */
 function playNim(){
 count = 0
-if (count < 21) {
+while (count < 21) {
     userTurn()
-    if (count > 20) alert ("you lose")
-    else cpuTurn
-    if (count > 20) alert ("you win")
-    else alert ("test")
-}
+    if (count > 21) {alert ("you lose")}
+    else 
+{
+    cpuTurn
+    if (count > 20) {alert ("you win")} 
+        }   
+    }
 }
 
 /** 
@@ -46,7 +48,7 @@ if (count < 21) {
  * @return none
  */
 function userTurn(){
-var turn = prompt ("enter a number")
+let turn = prompt ("enter a number within 3" )
 if (turn < 1 || turn > 3) {
     alert ("your input is invalid")
     userTurn()
