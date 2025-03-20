@@ -6,7 +6,7 @@
 /* Global Variables */
 var trainer = false 
 var count = 0
-userFirst = false 
+var userFirst = 1 
 /** 
  * main  
  * Handles new Nim games with gametype choice simple or trainer and a play again option. 
@@ -19,7 +19,10 @@ function main() {
     trainer = confirm ("trainer mode?")
     playNim()
     again = confirm ("do you want to play again?")
-if (again == true) { main()}
+if (again == true) {
+    main()
+    userFirst = Math.floor(Math.random()*2+1)
+}
 else alert ("thanks for playing")
 }
 
@@ -31,8 +34,8 @@ else alert ("thanks for playing")
  */
 function playNim() {
 count = 0
-userFirst = confirm ("would you like to go first?")
-if (userFirst == true) {
+
+if (userFirst == "1") {
 while (count < 21) {
     userTurn()
     if (count > 20)
@@ -80,7 +83,7 @@ else count = count + turn
  * @return none
  */
 function cpuTurn() {
-    if (userFirst == true){
+    if (userFirst == "1"){
     if (count == 17 ) turn = 3
     else if (count == 18 ) turn = 2
     else if (count > 18 ) turn = 1
